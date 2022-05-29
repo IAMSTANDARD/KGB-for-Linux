@@ -1,6 +1,7 @@
+![banner image](KGB_banner_image.png)
 # Imst.KGB, Easy RGB Toggle
 ### Toggle the RGB lighting, on an RGB keyboard, on Linux with ease.
-
+![logo](KGB_logo.png)
 Iamst.KGB is an app to turn on and off the RGB lighting, on an RGB keyboard on Linux. (Right now it only works on Linux, because that’s where it is needed.)
 
 Unfortunately, scroll lock doesn’t work on Linux. And as a result, RGB keyboards don’t light up on Linux operating systems, because their light is toggled by the scroll lock key.
