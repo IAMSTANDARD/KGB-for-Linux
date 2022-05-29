@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://button theme.tres" type="Theme" id=1]
+[ext_resource path="res://Main scrript.gd" type="Script" id=2]
+[ext_resource path="res://light.png" type="Texture" id=3]
+[ext_resource path="res://jess-noise37-kaboom.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Social_Links.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color( 0.0588235, 0.0588235, 0.0588235, 0.658824 )
+shadow_size = 15
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -0.0140686, 0.263199, 299.383, 1.39586, 300.515, 100.691, 1.11856, 100.314 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.0666667, 0.286275, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="led_on" type="Button" parent="."]
+margin_left = 362.0
+margin_top = 175.0
+margin_right = 662.0
+margin_bottom = 275.0
+theme = ExtResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+text = "Lights on"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="light_block" type="LightOccluder2D" parent="led_on"]
+occluder = SubResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="led_on/light_block"]
+
+[node name="led_off" type="Button" parent="."]
+margin_left = 362.0
+margin_top = 325.0
+margin_right = 662.0
+margin_bottom = 425.0
+theme = ExtResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+text = "Lights off"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="light_block" type="LightOccluder2D" parent="led_off"]
+occluder = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="led_off/light_block"]
+
+[node name="light_left" type="Light2D" parent="."]
+position = Vector2( 512, 600 )
+scale = Vector2( 1.98918, 1.16779 )
+texture = ExtResource( 3 )
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_filter_smooth = 36.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="light_right" type="Light2D" parent="."]
+position = Vector2( 512, 0 )
+scale = Vector2( 1.98918, 1.16779 )
+texture = ExtResource( 3 )
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_filter_smooth = 36.0
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Social_Links" parent="." instance=ExtResource( 5 )]
+[connection signal="pressed" from="led_on" to="." method="_on_led_on_pressed"]
+[connection signal="pressed" from="led_off" to="." method="_on_led_off_pressed"]

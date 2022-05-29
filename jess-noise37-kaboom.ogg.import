@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jess-noise37-kaboom.ogg-e3031046364adb906cdbf46c9e3100bb.oggstr"
+
+[deps]
+
+source_file="res://jess-noise37-kaboom.ogg"
+dest_files=[ "res://.import/jess-noise37-kaboom.ogg-e3031046364adb906cdbf46c9e3100bb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

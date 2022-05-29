@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Keyboard Light Switch"
+config/description="in Linux, the scroll lock key doesn't work. While, many RGB keyboards these days, make it so their RGB lighting is turned off and on by the scroll lock key. And as a result, the those keyboards RGB lighting does not work on linux. 
+
+And that's why I've made this app, that will allow  you to do just that. Turn on and off the RGB lighting of your keyboard."
+run/main_scene="res://Main area.tscn"
+boot_splash/image="res://logo/itch_banner_image.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
+config/icon="res://logo/Keyboard_RGB_logo.png"
+config/macos_native_icon="res://logo/AnyConv.com__Keyboard_RGB_logo.icns"
+config/windows_native_icon="res://logo/Keyboard_RGB_logo.ico"
+
+[display]
+
+window/dpi/allow_hidpi=true
+window/energy_saving/keep_screen_on=false
+window/ios/hide_home_indicator=false
+window/stretch/aspect="keep"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/fallback_to_gles2=true
+environment/default_environment="res://default_env.tres"

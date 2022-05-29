@@ -1,0 +1,108 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://kofi_button_stroke.png" type="Texture" id=1]
+[ext_resource path="res://kofi_button_black.png" type="Texture" id=2]
+[ext_resource path="res://kofi_button_blue.png" type="Texture" id=3]
+[ext_resource path="res://link_logo/GitHub-Mark-120px-plus.png" type="Texture" id=4]
+[ext_resource path="res://link_logo/GitHub-Mark-Light-120px-plus.png" type="Texture" id=5]
+[ext_resource path="res://link_logo/itchio-logo-white.png" type="Texture" id=6]
+[ext_resource path="res://link_logo/itchio-logo-black.png" type="Texture" id=7]
+[ext_resource path="res://link_logo/yt_logo_rgb_light.png" type="Texture" id=8]
+[ext_resource path="res://link_logo/yt_logo_rgb_dark.png" type="Texture" id=9]
+[ext_resource path="res://link_logo/2021 Twitter logo - black.png" type="Texture" id=10]
+[ext_resource path="res://link_logo/2021 Twitter logo - white.png" type="Texture" id=11]
+[ext_resource path="res://link_logo/2021 Twitter logo - blue.png" type="Texture" id=12]
+[ext_resource path="res://link_logo/Reddit_Lockup_OnWhite.png" type="Texture" id=13]
+[ext_resource path="res://link_logo/reddit_logo_horizontal_on_orangered.png" type="Texture" id=14]
+[ext_resource path="res://link_logo/Reddit_Lockup_OnDark.png" type="Texture" id=15]
+[ext_resource path="res://Social_Links.gd" type="Script" id=16]
+
+[node name="Social_Links" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 540.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -50.0
+rect_min_size = Vector2( 55, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ko-fi" type="TextureButton" parent="HBoxContainer"]
+margin_left = 29.0
+margin_right = 329.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 0 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+expand = true
+
+[node name="github" type="TextureButton" parent="HBoxContainer"]
+margin_left = 349.0
+margin_right = 404.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 55, 0 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+
+[node name="itch" type="TextureButton" parent="HBoxContainer"]
+margin_left = 424.0
+margin_right = 574.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="youtube" type="TextureButton" parent="HBoxContainer"]
+margin_left = 594.0
+margin_right = 744.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="twitter" type="TextureButton" parent="HBoxContainer"]
+margin_left = 764.0
+margin_right = 824.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 60, 50 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+expand = true
+
+[node name="reddit" type="TextureButton" parent="HBoxContainer"]
+margin_left = 844.0
+margin_right = 994.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
+expand = true
+[connection signal="pressed" from="HBoxContainer/ko-fi" to="." method="_on_kofi_pressed"]
+[connection signal="pressed" from="HBoxContainer/github" to="." method="_on_github_pressed"]
+[connection signal="pressed" from="HBoxContainer/itch" to="." method="_on_itch_pressed"]
+[connection signal="pressed" from="HBoxContainer/youtube" to="." method="_on_youtube_pressed"]
+[connection signal="pressed" from="HBoxContainer/twitter" to="." method="_on_twitter_pressed"]
+[connection signal="pressed" from="HBoxContainer/reddit" to="." method="_on_reddit_pressed"]
